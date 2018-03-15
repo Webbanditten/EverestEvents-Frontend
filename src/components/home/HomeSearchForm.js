@@ -6,7 +6,7 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const HomeSearchForm = ({categories, locations, fromDate, toDate}) => {
+const HomeSearchForm = ({categories, locations, fromDate, toDate, fromDateChange, toDateChange}) => {
     return (
         <form>
             <div className="form-row">
@@ -26,19 +26,17 @@ const HomeSearchForm = ({categories, locations, fromDate, toDate}) => {
             </div>
             <div className="form-group col-md-2">
                 <label htmlFor="fromDate">From Date</label>
-                <DatePicker selected={fromDate} id="fromDate" className="form-control"  />
+                <DatePicker selected={fromDate} id="fromDate" onChange={fromDateChange} className="form-control"  />
             </div>
             <div className="form-group col-md-2">
                 <label htmlFor="toDate">From Date</label>
-                <DatePicker selected={toDate} id="toDate" className="form-control" />
+                <DatePicker selected={toDate} id="toDate" onChange={toDateChange} className="form-control" />
             </div>
             <div className="form-group col-md-2">
                 <label htmlFor="search">&nbsp;</label>
                 <button type="submit" id="search" className="btn btn-primary form-control">Search</button>
             </div>
             </div>
-            
-            
         </form>
     );
 };
@@ -47,7 +45,9 @@ HomeSearchForm.propTypes = {
     categories: PropTypes.array.isRequired,
     locations: PropTypes.array.isRequired,
     fromDate: PropTypes.string,
-    toDate: PropTypes.string
+    toDate: PropTypes.string,
+    fromDateChange: PropTypes.func,
+    toDateChange: PropTypes.func
 };
 
 export default HomeSearchForm;

@@ -1,7 +1,7 @@
 {
-  "name": "test-frontend-01",
+  "name": "everestevents-frontend",
   "version": "1.0.0",
-  "description": "test-frontend-01",
+  "description": "everestevents-frontend",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
     "start": "npm-run-all --parallel open:src lint:watch",
