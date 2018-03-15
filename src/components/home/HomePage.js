@@ -4,9 +4,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import toastr from 'toastr';
 import swal from 'sweetalert2';
-import DatePicker from 'react-datepicker';
-import moment from 'moment';
-import 'react-datepicker/dist/react-datepicker.css';
+import HomeSearchForm from './HomeSearchForm';
+import HomeSearchResults from './HomeSearchResults';
 
 class HomePage extends React.Component {
     
@@ -23,8 +22,13 @@ class HomePage extends React.Component {
     render() {
         
         return (
-            <div className="jumbotron">
-                <h1>Welcome</h1>
+            <div className="main-container container">
+                <section className="jumbotron search text-center">
+                        <HomeSearchForm />
+                </section>
+                <div className="row">
+                    <HomeSearchResults />
+                </div>
             </div>
         );
     }

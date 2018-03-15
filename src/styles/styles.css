@@ -1,15 +1,10 @@
-#app {
-    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color:#4d4d4d;
-    min-width: 550px;
-    max-width: 850px;
-    margin:0 auto;
+.jumbotron.search {
+    border-radius: 0px 0px 5px 5px;
+    padding-top:15px;
+    padding-bottom:15px;
 }
 
-a.active {
-    color:orange;
+main .main-container:first-child {
+    margin-top:56px;
 }
-
-nav {
-    padding-top: 20px;
-}
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
