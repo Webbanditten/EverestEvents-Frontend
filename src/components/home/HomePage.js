@@ -27,7 +27,7 @@ class HomePage extends React.Component {
                         <HomeSearchForm />
                 </section>
                 <div className="row">
-                    <HomeSearchResults image="http://lorempixel.com/300/225" title="Breakfast" time="03/25/2018 10:10" location="Kløvervej 22E, 7190 Billund" />
+                    <HomeSearchResults image="https://loremflickr.com/300/225/breakfast" eventId="3" title="Breakfast" time="03/25/2018 10:10" location="Kløvervej 22E, 7190 Billund" />
                 </div>
             </div>
         );

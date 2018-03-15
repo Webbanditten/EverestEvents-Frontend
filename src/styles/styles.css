@@ -8,3 +8,9 @@ main .main-container:first-child {
     margin-top:56px;
 }
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+.box-shadow:hover {
+    text-decoration: none;
+}
+.box-shadow h5 {
+    color:#000;
+}

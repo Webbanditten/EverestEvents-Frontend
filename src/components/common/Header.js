@@ -3,7 +3,7 @@ import { Link, IndexLink } from 'react-router';
 import LoadingDots from './LoadingDots';
 import {PropTypes} from 'prop-types';
 
-const Header = ({loading}) => {
+const Header = () => {
     return (<header>
         <nav className="navbar navbar-expand-md navbar-light fixed-top bg-light">
         
@@ -15,17 +15,11 @@ const Header = ({loading}) => {
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
                 <IndexLink to="/" class="nav-link" activeClassName="active nav-link">Home</IndexLink>
-            {loading && <LoadingDots interval={100} dots={20} />}
-
               </li>
             </ul>
           </div>
         </nav>
       </header>);
-};
-
-Header.propTypes = {
-    loading: PropTypes.bool.isRequired
 };
 
 export default Header;
