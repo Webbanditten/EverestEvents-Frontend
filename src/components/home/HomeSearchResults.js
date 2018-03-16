@@ -1,7 +1,5 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 import moment from 'moment';
 import {Link} from 'react-router';
 
