@@ -6,6 +6,7 @@ import EventSignupForm from "./EventSignupForm";
 import * as eventActions from "../../actions/eventActions";
 import moment from "moment";
 import Message from "../common/Message";
+import {validateEmail} from "../../validators/emailValidator";
 
 class EventPage extends React.Component {
     
@@ -54,13 +55,16 @@ class EventPage extends React.Component {
         let errors = {};
         
         if (this.state.signupForm.name.length < 1) {
-            errors.name = "Place enter name";
+            errors.name = "Please enter name";
             formIsValid = false;
         }else if (this.state.signupForm.email.length < 1) {
-            errors.email = "Place enter email";
+            errors.email = "Please enter email";
+            formIsValid = false;
+        } else if (!validateEmail(this.state.signupForm.email)) {
+            errors.email = "Please enter a valid email!";
             formIsValid = false;
         }else if (this.state.signupForm.phonenumber.length < 1) {
-            errors.phonenumber = "Place enter phonenumber";
+            errors.phonenumber = "Please enter phonenumber";
             formIsValid = false;
         }
 
