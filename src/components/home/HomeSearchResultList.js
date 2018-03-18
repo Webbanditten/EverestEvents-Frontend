@@ -1,7 +1,7 @@
-import React from 'react';
-import {PropTypes} from 'prop-types';
-import HomeSearchResults from './HomeSearchResults';
-import Loading from '../common/Loading';
+import React from "react";
+import {PropTypes} from "prop-types";
+import HomeSearchResults from "./HomeSearchResults";
+import Loading from "../common/Loading";
 
 const HomeSearchResultList = ({events, loading}) => {
     return (

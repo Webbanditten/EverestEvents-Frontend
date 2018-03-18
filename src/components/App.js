@@ -1,9 +1,9 @@
 // This is our wrapper component
-import React from 'react';
-import Header from './common/Header';
-import {connect} from 'react-redux';
-import {PropTypes} from 'prop-types';
-import Loading from './common/Loading';
+import React from "react";
+import Header from "./common/Header";
+import {connect} from "react-redux";
+import {PropTypes} from "prop-types";
+import Loading from "./common/Loading";
 
 class App extends React.Component {
     render() {

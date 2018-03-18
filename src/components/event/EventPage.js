@@ -1,11 +1,11 @@
-import React from 'react';
-import {PropTypes} from 'prop-types';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import EventSignupForm from './EventSignupForm';
-import * as eventActions from '../../actions/eventActions';
-import moment from 'moment';
-import Message from '../common/Message';
+import React from "react";
+import {PropTypes} from "prop-types";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import EventSignupForm from "./EventSignupForm";
+import * as eventActions from "../../actions/eventActions";
+import moment from "moment";
+import Message from "../common/Message";
 
 class EventPage extends React.Component {
     
@@ -13,7 +13,7 @@ class EventPage extends React.Component {
         super(props, context);
         
         this.state = {
-            signupForm: {eventId: this.props.params.eventId, name:'', email:'', phonenumber:'', signedUp:false},
+            signupForm: {eventId: this.props.params.eventId, name:"", email:"", phonenumber:"", signedUp:false},
             errors: {},
             saving: false,
             signupSuccess: false,
@@ -54,13 +54,13 @@ class EventPage extends React.Component {
         let errors = {};
         
         if (this.state.signupForm.name.length < 1) {
-            errors.name = 'Place enter name';
+            errors.name = "Place enter name";
             formIsValid = false;
         }else if (this.state.signupForm.email.length < 1) {
-            errors.email = 'Place enter email';
+            errors.email = "Place enter email";
             formIsValid = false;
         }else if (this.state.signupForm.phonenumber.length < 1) {
-            errors.phonenumber = 'Place enter phonenumber';
+            errors.phonenumber = "Place enter phonenumber";
             formIsValid = false;
         }
 
@@ -97,7 +97,7 @@ class EventPage extends React.Component {
                     <div className="row">
                     <div className="col-md-8">
                         <div className="card box-shadow">
-                            <img className="card-img-top" style={{height: '300px'}} src={this.props.event.imageLarge} alt={this.props.event.title} />
+                            <img className="card-img-top" style={{height: "300px"}} src={this.props.event.imageLarge} alt={this.props.event.title} />
                             <div className="card-body">
                             <h5 className="card-title">{this.props.event.title}</h5>
                             <h6 className="card-subtitle mb-2 text-muted">{moment(this.props.event.time).format("lll")}</h6>
@@ -112,7 +112,7 @@ class EventPage extends React.Component {
                     </div>
                     <div className="col-md-4 mb-4">{this.state.signupSuccess}
                         {(!this.state.signupSuccess && this.state.cancelSignupSuccess) && <Message text="Your participation has now been cancelled" type="info" />}
-                        {this.state.signupSuccess &&  <Message text={'You are now signed up!'} type="success" />}
+                        {this.state.signupSuccess &&  <Message text={"You are now signed up!"} type="success" />}
                         <EventSignupForm cancelSignup={this.cancelSignup} signupForm={this.state.signupForm} onChange={this.updateSignupForm} onSave={this.saveSignupForm} errors={this.state.errors} saving={this.state.saving} />
                        
                         

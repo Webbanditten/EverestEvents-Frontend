@@ -1,7 +1,7 @@
 /*eslint no-cond-assign: [0, "except-parens"]*/
-import delay from './delay';
-import Moment from 'moment';
-import { extendMoment } from 'moment-range';
+import delay from "./delay";
+import Moment from "moment";
+import { extendMoment } from "moment-range";
 const moment = extendMoment(Moment);
 // This file mocks a web API by working with the hard-coded data below.
 // It uses setTimeout to simulate the delay of an AJAX call.
@@ -117,8 +117,8 @@ class EventsApi {
         
         if(!isNaN(new Date(fromDate)) && !isNaN(new Date(toDate))) {
           [...filteredEvents].forEach(event => {
-            let before = moment(event.time).isSameOrAfter(fromDate, 'day');
-            let after = moment(event.time).isSameOrBefore(toDate, 'day');
+            let before = moment(event.time).isSameOrAfter(fromDate, "day");
+            let after = moment(event.time).isSameOrBefore(toDate, "day");
             if(!(before === true && after === true)) {
               const indexOfEvent = filteredEvents.indexOf(event);
               filteredEvents.splice(indexOfEvent, 1);

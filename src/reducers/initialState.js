@@ -4,6 +4,6 @@ export default {
     categories: [],
     locations: [],
     loadingEvents: false,
-    searchForm: {category: '', location:'', fromDate:null, toDate:null},
+    searchForm: {category: "", location:"", fromDate:null, toDate:null},
     ajaxCallsInProgress: 0
 };

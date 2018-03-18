@@ -1,5 +1,5 @@
-import * as types from '../actions/actionTypes';
-import initialState from './initialState';
+import * as types from "../actions/actionTypes";
+import initialState from "./initialState";
 
 export default function loadingEvents(state = initialState.loadingEvents, action) {
     if(action.type == types.BEGIN_LOADING_EVENTS) {

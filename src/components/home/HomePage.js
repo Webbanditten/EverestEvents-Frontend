@@ -1,13 +1,13 @@
-import React from 'react';
-import {PropTypes} from 'prop-types';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import HomeSearchForm from './HomeSearchForm';
-import HomeSearchResultList from './HomeSearchResultList';
-import * as eventActions from '../../actions/eventActions';
-import moment from 'moment';
-import Message from '../common/Message';
-import loadingEvents from '../../reducers/loadingEventsReducer';
+import React from "react";
+import {PropTypes} from "prop-types";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import HomeSearchForm from "./HomeSearchForm";
+import HomeSearchResultList from "./HomeSearchResultList";
+import * as eventActions from "../../actions/eventActions";
+import moment from "moment";
+import Message from "../common/Message";
+import loadingEvents from "../../reducers/loadingEventsReducer";
 
 class HomePage extends React.Component {
     
@@ -51,7 +51,7 @@ class HomePage extends React.Component {
                 <section className="jumbotron search text-center">
                         <HomeSearchForm onSubmit={this.onSearch} onChange={this.updateSearchForm} onFromDateChange={this.onFromDateChange} onToDateChange={this.onToDateChange} searchForm={this.props.searchForm} locations={this.props.locations} categories={this.props.categories} />
                 </section>
-                {(this.props.events.length <= 0 && !this.props.loadingEvents) && <Message text={'Doesnt seem like any events was found for those search criterias. Try editing the search parameters and try again!'} type="info" />}
+                {(this.props.events.length <= 0 && !this.props.loadingEvents) && <Message text={"Doesnt seem like any events was found for those search criterias. Try editing the search parameters and try again!"} type="info" />}
                 
                 <HomeSearchResultList events={this.props.events} loading={this.props.loadingEvents} />
             </div>

@@ -1,6 +1,6 @@
-import EventsApi from '../api/mockEventsApi';
-import * as types from './actionTypes';
-import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
+import EventsApi from "../api/mockEventsApi";
+import * as types from "./actionTypes";
+import {beginAjaxCall, ajaxCallError} from "./ajaxStatusActions";
 
 
 export function loadEventsSuccess(events) {
