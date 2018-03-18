@@ -11,8 +11,11 @@ class App extends React.Component {
             <div className="container-fluid">
                 <Header />
                 <main role="main">
-                    {this.props.loading && <Loading marginTop={250} />}
-                    {this.props.children}
+                    {this.props.loading ? (
+                        <Loading marginTop={250} />
+                    ) : (
+                        this.props.children
+                    )}
                 </main>
             </div>
         );

@@ -13,7 +13,7 @@ const Message = ({text, type}) => {
 };
 
 Message.propTypes = {
-  text: PropTypes.object,
+  text: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   type: PropTypes.string
 };
 

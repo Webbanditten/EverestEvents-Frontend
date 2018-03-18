@@ -47,7 +47,7 @@ class EventPage extends React.Component {
         let signupForm = Object.assign({}, this.state.signupForm);
         signupForm[field] = event.target.value;
         return this.setState({signupForm});
-      }
+    }
     
     signupFormIsValid() {
         let formIsValid = true;
@@ -112,7 +112,7 @@ class EventPage extends React.Component {
                     </div>
                     <div className="col-md-4 mb-4">{this.state.signupSuccess}
                         {(!this.state.signupSuccess && this.state.cancelSignupSuccess) && <Message text="Your participation has now been cancelled" type="info" />}
-                        {this.state.signupSuccess &&  <Message text="You are now signed up!" type="success" />}
+                        {this.state.signupSuccess &&  <Message text={'You are now signed up!'} type="success" />}
                         <EventSignupForm cancelSignup={this.cancelSignup} signupForm={this.state.signupForm} onChange={this.updateSignupForm} onSave={this.saveSignupForm} errors={this.state.errors} saving={this.state.saving} />
                        
                         

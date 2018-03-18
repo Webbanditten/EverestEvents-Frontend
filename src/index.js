@@ -5,14 +5,15 @@ import configureStore from './store/configureStore';
 import {Provider} from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';
-import {loadEvents} from './actions/eventActions';
+import {loadEvents, loadCategories, loadLocations} from './actions/eventActions';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.css'; // General stylesheet 
 import './styles/loading.css'; // Loading styles
 
 
 const store = configureStore();
-store.dispatch(loadEvents());
+store.dispatch(loadCategories());
+store.dispatch(loadLocations());
 
 render(
     <Provider store={store}>
