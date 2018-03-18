@@ -81,6 +81,9 @@ class EventPage extends React.Component {
                 this.setState({signupSuccess: true});
                 this.setState({cancelSignupSuccess: false});
                 this.setState({saving: false});
+                let signupForm = Object.assign({}, this.state.signupForm);
+                signupForm.signedUp = false;
+                this.setState({signupForm});
             }).catch(error => {
             this.setState({signupForm: error});
             this.setState({signupSuccess: false});
