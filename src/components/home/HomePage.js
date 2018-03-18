@@ -2,20 +2,14 @@ import React from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import toastr from 'toastr';
-import swal from 'sweetalert2';
 import HomeSearchForm from './HomeSearchForm';
-import HomeSearchResults from './HomeSearchResults';
+import HomeSearchResultList from './HomeSearchResultList';
+import * as eventActions from '../../actions/eventActions';
 
 class HomePage extends React.Component {
     
     constructor(props, context) {
         super(props, context);
-
-        this.state = {
-
-        };
-
     }
 
 
@@ -24,27 +18,31 @@ class HomePage extends React.Component {
         return (
             <div className="main-container container">
                 <section className="jumbotron search text-center">
-                        <HomeSearchForm />
+                        <HomeSearchForm locations={[]} categories={[]} />
                 </section>
-                <div className="row">
-                    <HomeSearchResults image="https://loremflickr.com/300/225/breakfast" eventId="3" title="Breakfast" time="03/25/2018 10:10" location="Kløvervej 22E, 7190 Billund" />
-                </div>
+                <HomeSearchResultList events={this.props.events} loading={this.props.loadingEvents} />
             </div>
         );
     }
 }
 
 HomePage.propTypes = {
-
+    events: PropTypes.arrayOf(PropTypes.object),
+    loadingEvents: PropTypes.bool
 };
 
 // Redux related functions 
 function mapStateToProps(state, ownProps) {
-    return;
+    return {
+        events: state.events,
+        loadingEvents: state.loadingEvents
+    };
 }
 
 function mapDispatchToProps(dispatch) {
-    return;
+    return {
+        actions: bindActionCreators(eventActions, dispatch)
+    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

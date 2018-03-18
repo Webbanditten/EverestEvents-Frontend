@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
-import LoadingDots from './LoadingDots';
 import {PropTypes} from 'prop-types';
 
 const Header = () => {
@@ -14,7 +13,7 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <IndexLink to="/" class="nav-link" activeClassName="active nav-link">Home</IndexLink>
+                <IndexLink to="/" className="nav-link" activeClassName="active nav-link">Home</IndexLink>
               </li>
             </ul>
           </div>

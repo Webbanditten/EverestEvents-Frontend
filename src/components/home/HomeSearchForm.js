@@ -14,14 +14,22 @@ const HomeSearchForm = ({categories, locations, fromDate, toDate, fromDateChange
                 <label htmlFor="categories">Categories</label>
                 <select id="categories" className="form-control">
                 <option selected>Choose category</option>
-                <option>...</option>
+                {
+                    categories.map((category) => {
+                        return <option key={category.id} value={category.id}>{category.name}</option>;
+                    })
+                }
                 </select>
             </div>
             <div className="form-group col-md-3">
                 <label htmlFor="locations">Locations</label>
                 <select id="locations" className="form-control">
                 <option selected>Choose location</option>
-                <option>...</option>
+                {
+                    locations.map((location) => {
+                        return <option key={location.name} value={location.name}>{location.name}</option>;
+                    })
+                }
                 </select>
             </div>
             <div className="form-group col-md-2">
@@ -42,8 +50,8 @@ const HomeSearchForm = ({categories, locations, fromDate, toDate, fromDateChange
 };
 
 HomeSearchForm.propTypes = {
-    categories: PropTypes.array.isRequired,
-    locations: PropTypes.array.isRequired,
+    categories: PropTypes.arrayOf(PropTypes.object).isRequired,
+    locations: PropTypes.arrayOf(PropTypes.string).isRequired,
     fromDate: PropTypes.string,
     toDate: PropTypes.string,
     fromDateChange: PropTypes.func,
