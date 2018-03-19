@@ -14,7 +14,8 @@ class HomePage extends React.Component {
     constructor(props, context) {
         super(props, context);
 
-        this.props.actions.loadEvents();
+        if(this.props.events.length <= 0)
+            this.props.actions.loadEvents();
 
         this.updateSearchForm = this.updateSearchForm.bind(this);
         this.onSearch = this.onSearch.bind(this);
